@@ -14,6 +14,22 @@ I will create `spring-cloud2025-estore` next year, hence use `cloud2024` in the 
 This multi-module project is created by my plugin [billcat-maven-archetypes](https://github.com/billcat-projects/billcat-maven-archetypes), you can install it and use locally. It's very simple to use.
 
 ```shell
+# Option 1: Install the above archetype plugin and create your estore project from scratch 
+mvn archetype:generate \
+-DarchetypeGroupId=net.billcat.archetypes \
+-DarchetypeArtifactId=multi-module-cloud-jpa \
+-DarchetypeVersion=1.0.0 \
+-DgroupId=com.yourcompany.demo \
+-DartifactId=your-project-name \
+-Dversion=1.0.0-SNAPSHOT
+
+# Remove extra parent tag (see Known issues in my archetype plugin project)
+open `your-project-name-dependencies/pom.xml` and remove `<parent>` tag
+
+# Option 2: Clone this project directly
+git clone https://github.com/billcat-projects/spring-cloud2024-estore.git
+
+# Finally: Now everything is the same
 cd spring-cloud2024-estore
 mvn clean install
 ```
